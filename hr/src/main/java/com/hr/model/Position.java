@@ -54,7 +54,7 @@ public class Position implements Serializable {
 
   @Override
   public String toString() {
-    return "Position{" +
+    return "PositionDao{" +
             "id='" + id + '\'' +
             ", name='" + name + '\'' +
             ", time='" + time + '\'' +
