@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.hr.dao.AccountDao">
+    <insert id="addAccount">
+        insert into T_ACCOUNT(A_NAME,A_PASS,A_TYPE) values (#{name},#{pass},#{type})
+    </insert>
+
     <select id="getAccount" resultType="com.hr.model.Account">
         select A_ID id,A_NAME name,A_PASS pass,A_TYPE type
         from T_ACCOUNT
         where A_NAME=#{name} and A_PASS=#{pass} and A_TYPE=#{type}
+    </select>
+    <select id="getAccountByName" resultType="com.hr.model.Account">
+        select A_ID id,A_NAME name,A_PASS pass,A_TYPE type
+        from T_ACCOUNT
+        where A_NAME=#{name}
     </select>
 </mapper>

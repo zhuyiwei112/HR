@@ -17,6 +17,6 @@
 </head>
 <body>
 <a href="gologin">login</a>
-
+<a href="godep">dep</a>
 </body>
 </html>

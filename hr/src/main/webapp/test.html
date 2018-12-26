@@ -3,8 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="resources/jquery-3.2.1.js"></script>
+    <script>
+        $(function () {
+            $("#addDep").click(function () {
+                var inp = $("#addDep");
+                var form = $("<form action='addDep' method='post'></form>");
+                /*form.attr("action","addDep");
+                form.attr("method","post");*/
+                inp.after(form);
+                var input = $("<input name='dep' type='text' placeholder='请输入新增的部门名称'>");
+                form.append(input);
+                var button = $("<input type='button' id='but1' value='确认'>")
+                form.append(button);
+                var cancel = $("<input type='button' id='cancel' value='取消'>")
+                form.append(cancel);
+
+            })
+        })
+    </script>
 </head>
 <body>
+<div>
+<input type="button" value="新增部门" id="addDep">
+<form action="" method="post">
+
+</form>
+</div>
+
+
+
+
+
+
+
+
+
+<fieldset>
+    <legend>注册界面</legend>
+    <form method="post" action="register">
+    <table>
+        <tr>
+            <td>账　　号：</td>
+            <td colspan="2"><input type="text" name="name" placeholder="请输入账号"></td>
+            <td></td>
+            <td>5-16位可包含字母数字下划线</td>
+        </tr>
+        <tr>
+            <td>密　　码：</td>
+            <td colspan="2"><input type="password" name="pass" placeholder="请输入密码"></td>
+            <td></td>
+            <td>6~18位字母开头可包含字母、数字和下划线</td>
+        </tr>
+        <tr>
+            <td>确认密码：</td>
+            <td colspan="2"><input type="password" name="pass" placeholder="请输入确认密码"></td>
+            <td></td>
+            <td>两次密码必须相同</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="button" value="注册"></td>
+            <td><a href="gologin">已有帐号</a></td>
+        </tr>
+    </table>
+    </form>
+</fieldset>
+
+
+
+
+
+
+<p>
+    <select>
+        <c:forEach items="${sessionScope.departments}" var="depar">
+            <option>${depar.name}</option>
+        </c:forEach>
+    </select>
+    <select>
+        <c:forEach items="${sessionScope.departments[0].position}" var="pos">
+            <option>${pos.name}</option>
+        </c:forEach>
+    </select>
+    <input type="button" value="查询">
+</p>
 <fieldset style="width: 200px">
     <legend>登入</legend>
     <form action="login" method="post">

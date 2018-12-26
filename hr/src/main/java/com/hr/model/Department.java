@@ -13,6 +13,11 @@ public class Department implements Serializable {
     public Department() {
     }
 
+    public Department(String name, String time) {
+        this.name = name;
+        this.time = time;
+    }
+
     public Integer getId() {
         return id;
     }

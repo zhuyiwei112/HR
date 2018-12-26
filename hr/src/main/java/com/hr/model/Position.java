@@ -1,13 +1,15 @@
 package com.hr.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Position implements Serializable {
   private String id;
   private String name;
   private String time;
   private Department department;
-  private Employee employee;
+  private List<Employee> employees = new ArrayList<>();
 
   public Position() {
   }
@@ -44,15 +46,15 @@ public class Position implements Serializable {
     this.department = department;
   }
 
-  public Employee getEmployee() {
-    return employee;
-  }
+    public List<Employee> getEmployees() {
+        return employees;
+    }
 
-  public void setEmployee(Employee employee) {
-    this.employee = employee;
-  }
+    public void setEmployees(List<Employee> employees) {
+        this.employees = employees;
+    }
 
-  @Override
+    @Override
   public String toString() {
     return "PositionDao{" +
             "id='" + id + '\'' +

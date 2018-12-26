@@ -19,12 +19,13 @@
 <div>
     <div>
         <ul>
-            <li><a href="#">部门/职位</a></li>
-            <li><a href="#">员工</a></li>
-            <li><a href="#">考勤</a></li>
+            <li><a href="godep">部门信息</a></li>
+            <li><a href="getDep">员工查询</a></li>
+            <li><a href="#">员工入职</a></li>
+            <li><a href="#">员工考勤</a></li>
             <li><a href="#">招聘信息</a></li>
-            <li><a href="#">薪资</a></li>
-            <li><a href="#">奖惩</a></li>
+            <li><a href="#">员工薪资</a></li>
+            <li><a href="#">员工奖惩</a></li>
         </ul>
     </div>
 </div>

@@ -10,6 +10,7 @@ public class Employee implements Serializable {
     private Position position;
     private Account account;
     private Double bonus;
+    private Resume resume;
 
     public Employee() {
     }
@@ -68,6 +69,14 @@ public class Employee implements Serializable {
 
     public void setBonus(Double bonus) {
         this.bonus = bonus;
+    }
+
+    public Resume getResume() {
+        return resume;
+    }
+
+    public void setResume(Resume resume) {
+        this.resume = resume;
     }
 
     @Override

@@ -19,4 +19,19 @@ public class AccountServiceImpl implements AccountService {
         }
         return null;
     }
+
+    @Override
+    public int addAccount(Account account) {
+        if (account==null){
+            return -1;
+        }
+        Account account1 = accountDao.getAccountByName(account.getName());
+        if (account1==null){
+             if(accountDao.addAccount(account)){
+                 return 1;//成功
+             }
+             return 2;//失败
+        }
+        return 0;//用户存在
+    }
 }

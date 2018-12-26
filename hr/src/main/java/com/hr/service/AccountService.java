@@ -4,4 +4,5 @@ import com.hr.model.Account;
 
 public interface AccountService {
     Account getAccount(Account account);
+    int addAccount(Account account);
 }

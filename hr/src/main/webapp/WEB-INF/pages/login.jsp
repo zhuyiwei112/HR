@@ -17,17 +17,17 @@
 </head>
 <body>
 <fieldset style="width: 200px">
-    <legend>登入</legend>
+    <legend>登入界面</legend>
     <form action="login" method="post">
         <table>
             <tr>
                 <td>帐号:</td>
-                <td colspan="2"><input type="text" name="name" required></td>
+                <td colspan="2"><input type="text" name="name" required placeholder="请输入账号"></td>
                 <td></td>
             </tr>
             <tr>
                 <td>密码:</td>
-                <td colspan="2"><input type="password" name="pass" required></td>
+                <td colspan="2"><input type="password" name="pass" required placeholder="请输入密码"></td>
                 <td></td>
             </tr>
             <tr>
@@ -44,7 +44,7 @@
             <tr>
                 <td></td>
                 <td><input type="submit" value="登入"></td>
-                <td><a href="#">还没帐号？</a></td>
+                <td><a href="goregister">还没帐号？</a></td>
             </tr>
         </table>
     </form>

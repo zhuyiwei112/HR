@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hr.dao.DepartmentDao">
+    <resultMap id="departMap" type="com.hr.model.Department">
+        <id property="id" column="D_ID"/>
+        <result property="name" column="D_NAME"/>
+        <result property="time" column="D_TIME"/>
+        <collection property="positions" resultMap="posMap"/>
+    </resultMap>
+    <resultMap id="posMap" type="com.hr.model.Position">
+        <id property="id" column="P_ID"/>
+        <result property="name" column="P_NAME"/>
+        <result property="time" column="P_TIME"/>
+        <collection property="employees" resultMap="empMap"/>
+    </resultMap>
+    <resultMap id="empMap" type="com.hr.model.Employee">
+        <id property="id" column="E_ID"/>
+        <result property="time" column="E_TIME"/>
+        <result property="bonus" column="E_BONUS"/>
+        <result property="salary" column="E_SALARY"/>
+        <association property="empState" javaType="com.hr.model.EmpState">
+            <id property="id" column="ES_ID"/>
+            <result property="state" column="ES_STATEID"/>
+        </association>
+        <association property="resume" javaType="com.hr.model.Resume">
+            <id property="id" column="R_ID"/>
+            <result property="name" column="R_NAME"/>
+            <result property="birth" column="R_BIRTH"/>
+            <result property="sex" column="R_SEX"/>
+            <result property="phone" column="R_PHONE"/>
+            <result property="address" column="R_ADDRESS"/>
+            <result property="education" column="R_EDUCATION"/>
+            <result property="email" column="R_EMAIL"/>
+            <result property="major" column="R_MAJOR"/>
+            <result property="experience" column="R_EXPERIENCE"/>
+        </association>
+    </resultMap>
+    <insert id="addDepartment">
+        insert into T_DEPARTMENT(D_NAME, D_TIME) values (#{name},#{time})
+    </insert>
+    <delete id="delDepartment">
+        delete from T_DEPARTMENT where D_ID=#{id}
+    </delete>
+
+    <select id="getALLDepartments" resultMap="departMap">
+      SELECT D_ID,D_NAME,D_TIME,
+              P_ID,P_NAME,P_TIME,P_DID,
+              E_ID,E_TIME,E_SALARY,E_STATEID,E_PID,E_AID,E_BONUS,
+                ES_ID,ES_STATE,
+                R_ID,R_NAME,R_BIRTH,R_SEX,R_PHONE,R_ADDRESS,R_EDUCATION,R_EMAIL,R_MAJOR,R_EXPERIENCE,R_AID
+      FROM (((T_DEPARTMENT dep left join T_POSITION pos on dep.D_ID=pos.P_DID) left join T_EMPLOYEE emp on emp.E_PID=pos.P_ID)
+            left join T_RESUME res on res.R_AID=emp.E_AID) left join T_EMPSTATE es on es.ES_ID=emp.E_STATEID
+    </select>
+    <select id="getDepartmentByName" resultMap="departMap">
+        select D_ID,D_NAME,D_TIME
+        from T_DEPARTMENT
+        WHERE D_NAME=#{name}
+    </select>
+</mapper>
