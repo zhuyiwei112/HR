@@ -38,6 +38,9 @@
     <insert id="addDepartment">
         insert into T_DEPARTMENT(D_NAME, D_TIME) values (#{name},#{time})
     </insert>
+    <update id="updateDepartment">
+        update T_DEPARTMENT set D_NAME=#{name} where D_ID=#{id}
+    </update>
     <delete id="delDepartment">
         delete from T_DEPARTMENT where D_ID=#{id}
     </delete>

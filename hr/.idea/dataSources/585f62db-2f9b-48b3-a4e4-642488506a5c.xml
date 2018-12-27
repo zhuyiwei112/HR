@@ -6,9 +6,9 @@
     </root>
     <schema id="2" parent="1" name="HR_MVC">
       <ObjectId>49</ObjectId>
-      <IntrospectionTimestamp>2018-12-25.17:04:09</IntrospectionTimestamp>
+      <IntrospectionTimestamp>2018-12-26.22:22:50</IntrospectionTimestamp>
       <CreatedTimestamp>2018-12-24.22:41:50</CreatedTimestamp>
-      <ModifiedTimestamp>2018-12-25.04:06:19</ModifiedTimestamp>
+      <ModifiedTimestamp>2018-12-26.22:21:32</ModifiedTimestamp>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -76,8 +76,9 @@
     <sequence id="22" parent="2" name="DEPARTMENT_SEQ">
       <ObjectId>20300</ObjectId>
       <CreatedTimestamp>2018-12-24.23:15:15</CreatedTimestamp>
-      <ModifiedTimestamp>2018-12-24.23:15:15</ModifiedTimestamp>
+      <ModifiedTimestamp>2018-12-26.04:02:39</ModifiedTimestamp>
       <SequenceIdentity>1</SequenceIdentity>
+      <Ordered>1</Ordered>
       <CacheSize>-2147483648</CacheSize>
     </sequence>
     <sequence id="23" parent="2" name="EMPLOYEE_SEQ">
@@ -94,67 +95,74 @@
       <SequenceIdentity>1</SequenceIdentity>
       <CacheSize>-2147483648</CacheSize>
     </sequence>
-    <sequence id="25" parent="2" name="RESUME_SEQ">
+    <sequence id="25" parent="2" name="POSITION_SEQ">
+      <ObjectId>20386</ObjectId>
+      <CreatedTimestamp>2018-12-26.22:21:31</CreatedTimestamp>
+      <ModifiedTimestamp>2018-12-26.22:21:31</ModifiedTimestamp>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>-2147483648</CacheSize>
+    </sequence>
+    <sequence id="26" parent="2" name="RESUME_SEQ">
       <ObjectId>20306</ObjectId>
       <CreatedTimestamp>2018-12-25.04:06:18</CreatedTimestamp>
       <ModifiedTimestamp>2018-12-25.04:06:18</ModifiedTimestamp>
       <SequenceIdentity>1</SequenceIdentity>
       <CacheSize>-2147483648</CacheSize>
     </sequence>
-    <table id="26" parent="2" name="T_ACCOUNT">
+    <table id="27" parent="2" name="T_ACCOUNT">
       <ObjectId>20286</ObjectId>
       <CreatedTimestamp>2018-12-24.22:41:50</CreatedTimestamp>
       <ModifiedTimestamp>2018-12-24.22:46:14</ModifiedTimestamp>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
-    <table id="27" parent="2" name="T_DEPARTMENT">
+    <table id="28" parent="2" name="T_DEPARTMENT">
       <ObjectId>20298</ObjectId>
       <CreatedTimestamp>2018-12-24.23:14:18</CreatedTimestamp>
       <ModifiedTimestamp>2018-12-24.23:15:15</ModifiedTimestamp>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
-    <table id="28" parent="2" name="T_EMPLOYEE">
+    <table id="29" parent="2" name="T_EMPLOYEE">
       <ObjectId>20290</ObjectId>
       <CreatedTimestamp>2018-12-24.23:07:02</CreatedTimestamp>
       <ModifiedTimestamp>2018-12-24.23:09:15</ModifiedTimestamp>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
-    <table id="29" parent="2" name="T_EMPSTATE">
+    <table id="30" parent="2" name="T_EMPSTATE">
       <ObjectId>20294</ObjectId>
       <CreatedTimestamp>2018-12-24.23:10:42</CreatedTimestamp>
       <ModifiedTimestamp>2018-12-24.23:12:23</ModifiedTimestamp>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
-    <table id="30" parent="2" name="T_POSITION">
+    <table id="31" parent="2" name="T_POSITION">
       <ObjectId>20302</ObjectId>
       <CreatedTimestamp>2018-12-24.23:17:49</CreatedTimestamp>
-      <ModifiedTimestamp>2018-12-24.23:17:49</ModifiedTimestamp>
+      <ModifiedTimestamp>2018-12-26.22:21:32</ModifiedTimestamp>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
-    <table id="31" parent="2" name="T_RESUME">
+    <table id="32" parent="2" name="T_RESUME">
       <ObjectId>20304</ObjectId>
       <CreatedTimestamp>2018-12-25.03:58:51</CreatedTimestamp>
       <ModifiedTimestamp>2018-12-25.04:06:19</ModifiedTimestamp>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
-    <column id="32" parent="26" name="A_ID">
+    <column id="33" parent="27" name="A_ID">
       <Position>1</Position>
       <DataType>NUMBER(10 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="33" parent="26" name="A_NAME">
+    <column id="34" parent="27" name="A_NAME">
       <Position>2</Position>
       <DataType>VARCHAR2(255 byte)|0s</DataType>
     </column>
-    <column id="34" parent="26" name="A_PASS">
+    <column id="35" parent="27" name="A_PASS">
       <Position>3</Position>
       <DataType>VARCHAR2(255 byte)|0s</DataType>
     </column>
-    <column id="35" parent="26" name="A_TYPE">
+    <column id="36" parent="27" name="A_TYPE">
       <Position>4</Position>
       <DataType>VARCHAR2(255 byte)|0s</DataType>
     </column>
-    <index id="36" parent="26" name="SYS_C007020">
+    <index id="37" parent="27" name="SYS_C007020">
       <ObjectId>20287</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CreatedTimestamp>2018-12-24.22:41:50</CreatedTimestamp>
@@ -163,7 +171,7 @@
       <ColNames>A_ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="37" parent="26" name="SYS_C007020">
+    <key id="38" parent="27" name="SYS_C007020">
       <NameSurrogate>1</NameSurrogate>
       <ModifiedTimestamp>2018-12-24.22:41:50</ModifiedTimestamp>
       <ColNames>A_ID</ColNames>
@@ -171,7 +179,7 @@
       <UnderlyingIndexName>SYS_C007020</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <trigger id="38" parent="26" name="TR_ACCOUNT">
+    <trigger id="39" parent="27" name="TR_ACCOUNT">
       <ObjectId>20289</ObjectId>
       <SourceTextLength>72</SourceTextLength>
       <DependsOnIds>117,20288</DependsOnIds>
@@ -180,20 +188,20 @@
       <Events>I</Events>
       <Turn>before-row</Turn>
     </trigger>
-    <column id="39" parent="27" name="D_ID">
+    <column id="40" parent="28" name="D_ID">
       <Position>1</Position>
       <DataType>NUMBER(10 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="40" parent="27" name="D_NAME">
+    <column id="41" parent="28" name="D_NAME">
       <Position>2</Position>
       <DataType>VARCHAR2(255 byte)|0s</DataType>
     </column>
-    <column id="41" parent="27" name="D_TIME">
+    <column id="42" parent="28" name="D_TIME">
       <Position>3</Position>
       <DataType>VARCHAR2(255 byte)|0s</DataType>
     </column>
-    <index id="42" parent="27" name="SYS_C007026">
+    <index id="43" parent="28" name="SYS_C007026">
       <ObjectId>20299</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CreatedTimestamp>2018-12-24.23:14:18</CreatedTimestamp>
@@ -202,7 +210,7 @@
       <ColNames>D_ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="43" parent="27" name="SYS_C007026">
+    <key id="44" parent="28" name="SYS_C007026">
       <NameSurrogate>1</NameSurrogate>
       <ModifiedTimestamp>2018-12-24.23:14:18</ModifiedTimestamp>
       <ColNames>D_ID</ColNames>
@@ -210,7 +218,7 @@
       <UnderlyingIndexName>SYS_C007026</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <trigger id="44" parent="27" name="TR_DEPARTMENT">
+    <trigger id="45" parent="28" name="TR_DEPARTMENT">
       <ObjectId>20301</ObjectId>
       <SourceTextLength>75</SourceTextLength>
       <DependsOnIds>117,20300</DependsOnIds>
@@ -219,36 +227,36 @@
       <Events>I</Events>
       <Turn>before-row</Turn>
     </trigger>
-    <column id="45" parent="28" name="E_ID">
+    <column id="46" parent="29" name="E_ID">
       <Position>1</Position>
       <DataType>NUMBER(10 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="46" parent="28" name="E_TIME">
+    <column id="47" parent="29" name="E_TIME">
       <Position>2</Position>
       <DataType>VARCHAR2(255 byte)|0s</DataType>
     </column>
-    <column id="47" parent="28" name="E_SALARY">
+    <column id="48" parent="29" name="E_SALARY">
       <Position>3</Position>
       <DataType>NUMBER(10,2 digit)|0s</DataType>
     </column>
-    <column id="48" parent="28" name="E_STATEID">
+    <column id="49" parent="29" name="E_STATEID">
       <Position>4</Position>
       <DataType>NUMBER(10 digit)|0s</DataType>
     </column>
-    <column id="49" parent="28" name="E_PID">
+    <column id="50" parent="29" name="E_PID">
       <Position>5</Position>
       <DataType>NUMBER(10 digit)|0s</DataType>
     </column>
-    <column id="50" parent="28" name="E_AID">
+    <column id="51" parent="29" name="E_AID">
       <Position>6</Position>
       <DataType>NUMBER(10 digit)|0s</DataType>
     </column>
-    <column id="51" parent="28" name="E_BONUS">
+    <column id="52" parent="29" name="E_BONUS">
       <Position>7</Position>
       <DataType>NUMBER(10,2 digit)|0s</DataType>
     </column>
-    <index id="52" parent="28" name="SYS_C007022">
+    <index id="53" parent="29" name="SYS_C007022">
       <ObjectId>20291</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CreatedTimestamp>2018-12-24.23:07:02</CreatedTimestamp>
@@ -257,7 +265,7 @@
       <ColNames>E_ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="53" parent="28" name="SYS_C007022">
+    <key id="54" parent="29" name="SYS_C007022">
       <NameSurrogate>1</NameSurrogate>
       <ModifiedTimestamp>2018-12-24.23:07:02</ModifiedTimestamp>
       <ColNames>E_ID</ColNames>
@@ -265,7 +273,7 @@
       <UnderlyingIndexName>SYS_C007022</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <trigger id="54" parent="28" name="TR_EMPLOYEE">
+    <trigger id="55" parent="29" name="TR_EMPLOYEE">
       <ObjectId>20293</ObjectId>
       <SourceTextLength>73</SourceTextLength>
       <DependsOnIds>117,20292</DependsOnIds>
@@ -274,16 +282,16 @@
       <Events>I</Events>
       <Turn>before-row</Turn>
     </trigger>
-    <column id="55" parent="29" name="ES_ID">
+    <column id="56" parent="30" name="ES_ID">
       <Position>1</Position>
       <DataType>NUMBER(10 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="56" parent="29" name="ES_STATE">
+    <column id="57" parent="30" name="ES_STATE">
       <Position>2</Position>
       <DataType>VARCHAR2(255 byte)|0s</DataType>
     </column>
-    <index id="57" parent="29" name="SYS_C007024">
+    <index id="58" parent="30" name="SYS_C007024">
       <ObjectId>20295</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CreatedTimestamp>2018-12-24.23:10:42</CreatedTimestamp>
@@ -292,7 +300,7 @@
       <ColNames>ES_ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="58" parent="29" name="SYS_C007024">
+    <key id="59" parent="30" name="SYS_C007024">
       <NameSurrogate>1</NameSurrogate>
       <ModifiedTimestamp>2018-12-24.23:10:42</ModifiedTimestamp>
       <ColNames>ES_ID</ColNames>
@@ -300,7 +308,7 @@
       <UnderlyingIndexName>SYS_C007024</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <trigger id="59" parent="29" name="TR_EMPSTATE">
+    <trigger id="60" parent="30" name="TR_EMPSTATE">
       <ObjectId>20297</ObjectId>
       <SourceTextLength>74</SourceTextLength>
       <DependsOnIds>117,20296</DependsOnIds>
@@ -309,24 +317,24 @@
       <Events>I</Events>
       <Turn>before-row</Turn>
     </trigger>
-    <column id="60" parent="30" name="P_ID">
+    <column id="61" parent="31" name="P_ID">
       <Position>1</Position>
       <DataType>NUMBER(10 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="61" parent="30" name="P_NAME">
+    <column id="62" parent="31" name="P_NAME">
       <Position>2</Position>
       <DataType>VARCHAR2(255 byte)|0s</DataType>
     </column>
-    <column id="62" parent="30" name="P_TIME">
+    <column id="63" parent="31" name="P_TIME">
       <Position>3</Position>
       <DataType>VARCHAR2(255 byte)|0s</DataType>
     </column>
-    <column id="63" parent="30" name="P_DID">
+    <column id="64" parent="31" name="P_DID">
       <Position>4</Position>
       <DataType>NUMBER(10 digit)|0s</DataType>
     </column>
-    <index id="64" parent="30" name="SYS_C007028">
+    <index id="65" parent="31" name="SYS_C007028">
       <ObjectId>20303</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CreatedTimestamp>2018-12-24.23:17:49</CreatedTimestamp>
@@ -335,7 +343,7 @@
       <ColNames>P_ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="65" parent="30" name="SYS_C007028">
+    <key id="66" parent="31" name="SYS_C007028">
       <NameSurrogate>1</NameSurrogate>
       <ModifiedTimestamp>2018-12-24.23:17:49</ModifiedTimestamp>
       <ColNames>P_ID</ColNames>
@@ -343,52 +351,61 @@
       <UnderlyingIndexName>SYS_C007028</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="66" parent="31" name="R_ID">
+    <trigger id="67" parent="31" name="TR_POSITION">
+      <ObjectId>20387</ObjectId>
+      <SourceTextLength>73</SourceTextLength>
+      <DependsOnIds>117,20386</DependsOnIds>
+      <CreatedTimestamp>2018-12-26.22:21:31</CreatedTimestamp>
+      <ModifiedTimestamp>2018-12-26.22:21:31</ModifiedTimestamp>
+      <Events>I</Events>
+      <Turn>before-row</Turn>
+    </trigger>
+    <column id="68" parent="32" name="R_ID">
       <Position>1</Position>
       <DataType>NUMBER(10 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="67" parent="31" name="R_NAME">
+    <column id="69" parent="32" name="R_NAME">
       <Position>2</Position>
       <DataType>VARCHAR2(255 byte)|0s</DataType>
     </column>
-    <column id="68" parent="31" name="R_BIRTH">
+    <column id="70" parent="32" name="R_BIRTH">
       <Position>3</Position>
       <DataType>VARCHAR2(255 byte)|0s</DataType>
     </column>
-    <column id="69" parent="31" name="R_SEX">
+    <column id="71" parent="32" name="R_SEX">
       <Position>4</Position>
       <DataType>VARCHAR2(255 byte)|0s</DataType>
     </column>
-    <column id="70" parent="31" name="R_PHONE">
+    <column id="72" parent="32" name="R_PHONE">
       <Position>5</Position>
       <DataType>VARCHAR2(255 byte)|0s</DataType>
     </column>
-    <column id="71" parent="31" name="R_ADDRESS">
+    <column id="73" parent="32" name="R_ADDRESS">
       <Position>6</Position>
       <DataType>VARCHAR2(255 byte)|0s</DataType>
     </column>
-    <column id="72" parent="31" name="R_EMAIL">
+    <column id="74" parent="32" name="R_EMAIL">
       <Position>7</Position>
       <DataType>VARCHAR2(255 byte)|0s</DataType>
     </column>
-    <column id="73" parent="31" name="R_EDUCATION">
+    <column id="75" parent="32" name="R_EDUCATION">
       <Position>8</Position>
       <DataType>VARCHAR2(255 byte)|0s</DataType>
     </column>
-    <column id="74" parent="31" name="R_MAJOR">
+    <column id="76" parent="32" name="R_MAJOR">
       <Position>9</Position>
       <DataType>VARCHAR2(255 byte)|0s</DataType>
     </column>
-    <column id="75" parent="31" name="R_EXPERIENCE">
+    <column id="77" parent="32" name="R_EXPERIENCE">
       <Position>10</Position>
       <DataType>VARCHAR2(4000 byte)|0s</DataType>
     </column>
-    <column id="76" parent="31" name="R_AID">
+    <column id="78" parent="32" name="R_AID">
       <Position>11</Position>
       <DataType>NUMBER(10 digit)|0s</DataType>
     </column>
-    <index id="77" parent="31" name="SYS_C007030">
+    <index id="79" parent="32" name="SYS_C007030">
       <ObjectId>20305</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CreatedTimestamp>2018-12-25.03:58:51</CreatedTimestamp>
@@ -397,7 +414,7 @@
       <ColNames>R_ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="78" parent="31" name="SYS_C007030">
+    <key id="80" parent="32" name="SYS_C007030">
       <NameSurrogate>1</NameSurrogate>
       <ModifiedTimestamp>2018-12-25.03:58:51</ModifiedTimestamp>
       <ColNames>R_ID</ColNames>
@@ -405,7 +422,7 @@
       <UnderlyingIndexName>SYS_C007030</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <trigger id="79" parent="31" name="TR_RESUME">
+    <trigger id="81" parent="32" name="TR_RESUME">
       <ObjectId>20307</ObjectId>
       <SourceTextLength>71</SourceTextLength>
       <DependsOnIds>117,20306</DependsOnIds>

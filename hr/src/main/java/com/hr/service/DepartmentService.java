@@ -8,4 +8,5 @@ public interface DepartmentService {
     List<Department> getDepartment();
     int addDepartment(Department department);
     boolean delDepartment(Integer id);
+    int updateDepartment(Department department);
 }

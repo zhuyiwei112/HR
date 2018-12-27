@@ -9,4 +9,5 @@ public interface DepartmentDao {
     Department getDepartmentByName(String name);
     boolean addDepartment(Department department);
     boolean delDepartment(Integer id);
+    boolean updateDepartment(Department department);
 }

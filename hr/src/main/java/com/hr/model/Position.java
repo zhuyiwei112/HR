@@ -14,6 +14,12 @@ public class Position implements Serializable {
   public Position() {
   }
 
+  public Position(String name, String time, Department department) {
+    this.name = name;
+    this.time = time;
+    this.department = department;
+  }
+
   public String getId() {
     return id;
   }

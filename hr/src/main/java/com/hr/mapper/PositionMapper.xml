@@ -1,4 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.hr.dao.PositionDao">
+    <insert id="addPosition">
+        insert into T_POSITION(P_NAME, P_TIME, P_DID) values (#{name},#{time},#{department.id})
+    </insert>
+    <select id="getPositionByNameAndDid" parameterType="HashMap" resultType="com.hr.model.Position">
+        select P_ID,P_NAME,P_TIME,P_DID
+        from T_POSITION pos left join T_DEPARTMENT dep on pos.P_DID=dep.D_ID
+        where P_NAME=#{pname} and P_DID=#{did}
+    </select>
+
+    <resultMap id="posMap" type="com.hr.model.Position">
+        <id property="id" column="P_ID"/>
+        <result property="name" column="P_NAME"/>
+        <result property="time" column="P_TIME"/>
+        <association property="department" column="depMap"/>
+    </resultMap>
+    <resultMap id="depMap" type="com.hr.model.Department">
+        <id property="id" column="D_ID"/>
+    </resultMap>
 </mapper>

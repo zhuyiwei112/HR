@@ -42,4 +42,19 @@ public class DepartmentImpl implements DepartmentService {
         return departmentDao.delDepartment(id);
     }
 
+    @Override
+    public int updateDepartment(Department department) {
+        if (department==null||department.equals("")){
+            return -1;
+        }
+        Department department1 = departmentDao.getDepartmentByName(department.getName());
+        if (department1==null){
+            if (departmentDao.updateDepartment(department)){
+                return 1;
+            }
+            return 2;
+        }
+        return 0;
+    }
+
 }
