@@ -7,24 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a591ba07-c5bf-4e50-b625-ab927fa5b52c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hr/service/PositionService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hr/service/impl/PositionServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/getPos.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/585f62db-2f9b-48b3-a4e4-642488506a5c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/585f62db-2f9b-48b3-a4e4-642488506a5c.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/585f62db-2f9b-48b3-a4e4-642488506a5c/storage_v2/_src_/schema/HR_MVC.Bc-Mfw.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/585f62db-2f9b-48b3-a4e4-642488506a5c/storage_v2/_src_/schema/HR_MVC.Bc-Mfw.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/585f62db-2f9b-48b3-a4e4-642488506a5c/storage_v2/_src_/schema/HR_MVC.Bc-Mfw.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/585f62db-2f9b-48b3-a4e4-642488506a5c/storage_v2/_src_/schema/HR_MVC.Bc-Mfw.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hr/controller/DepAndPosController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hr/controller/DepAndPosController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hr/dao/DepartmentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hr/dao/DepartmentDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hr/dao/PositionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hr/dao/PositionDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hr/mapper/DepartmentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hr/mapper/DepartmentMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hr/mapper/PositionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hr/mapper/PositionMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hr/model/Department.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hr/model/Department.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hr/model/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hr/model/Position.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hr/service/DepartmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hr/service/DepartmentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hr/service/impl/DepartmentImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hr/service/impl/DepartmentImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/dpinfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/dpinfo.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/dpinfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/dpinfo.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -151,7 +134,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/hr/controller/DepAndPosController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
+            <state relative-caret-position="369">
               <caret line="184" column="30" selection-start-line="184" selection-start-column="30" selection-end-line="184" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -163,14 +146,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/dpinfo.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="640">
+            <state relative-caret-position="1504">
               <caret line="94" column="16" selection-start-line="72" selection-end-line="94" selection-end-column="16" />
-              <folding>
-                <element signature="n#style#0;n#input#0;n#td#2;n#tr#1;n#table#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#td#3;n#tr#1;n#table#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#td#4;n#tr#1;n#table#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#1;n#form#0;n#td#5;n#tr#1;n#table#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -178,7 +155,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/dp.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-288">
+            <state>
               <caret selection-end-column="64" />
             </state>
           </provider>
@@ -187,7 +164,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/adminMain.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
+            <state relative-caret-position="336">
               <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
             </state>
           </provider>
@@ -196,7 +173,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/getPos.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
+            <state relative-caret-position="592">
               <caret line="37" column="12" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
             </state>
           </provider>
@@ -620,6 +597,7 @@
       <workItem from="1545705676926" duration="25730000" />
       <workItem from="1545786234011" duration="35307000" />
       <workItem from="1545834337271" duration="3821000" />
+      <workItem from="1545872017541" duration="182000" />
     </task>
     <task id="LOCAL-00001" summary="SSM配置">
       <created>1545394424649</created>
@@ -663,7 +641,14 @@
       <option name="project" value="LOCAL" />
       <updated>1545788247228</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="1224 - 19:21">
+      <created>1545872127732</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1545872127732</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -671,8 +656,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26928896" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2730711" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
