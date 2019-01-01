@@ -18,6 +18,10 @@ public class Resume implements Serializable {
     public Resume() {
     }
 
+    public Resume(Account account) {
+        this.account = account;
+    }
+
     public Integer getId() {
         return id;
     }

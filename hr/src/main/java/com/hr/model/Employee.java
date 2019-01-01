@@ -85,7 +85,11 @@ public class Employee implements Serializable {
                 "id=" + id +
                 ", time='" + time + '\'' +
                 ", salary=" + salary +
+                ", empState=" + empState +
+                //", position=" + position +
+                //", account=" + account +
                 ", bonus=" + bonus +
+                ", resume=" + resume +
                 '}';
     }
 }

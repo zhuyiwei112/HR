@@ -20,7 +20,7 @@
         <result property="salary" column="E_SALARY"/>
         <association property="empState" javaType="com.hr.model.EmpState">
             <id property="id" column="ES_ID"/>
-            <result property="state" column="ES_STATEID"/>
+            <result property="state" column="ES_STATE"/>
         </association>
         <association property="resume" javaType="com.hr.model.Resume">
             <id property="id" column="R_ID"/>

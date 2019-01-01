@@ -4,8 +4,14 @@
     <insert id="addPosition">
         insert into T_POSITION(P_NAME, P_TIME, P_DID) values (#{name},#{time},#{department.id})
     </insert>
+    <update id="updatePosition">
+        update T_POSITION set P_NAME=#{name} where P_ID=#{id}
+    </update>
+    <delete id="delPosition">
+        delete from T_POSITION where P_ID=#{id}
+    </delete>
     <select id="getPositionByNameAndDid" parameterType="HashMap" resultType="com.hr.model.Position">
-        select P_ID,P_NAME,P_TIME,P_DID
+        select P_ID id,P_NAME name
         from T_POSITION pos left join T_DEPARTMENT dep on pos.P_DID=dep.D_ID
         where P_NAME=#{pname} and P_DID=#{did}
     </select>
@@ -18,5 +24,7 @@
     </resultMap>
     <resultMap id="depMap" type="com.hr.model.Department">
         <id property="id" column="D_ID"/>
+        <result property="name" column="D_NAME"/>
+        <result property="time" column="D_TIME"/>
     </resultMap>
 </mapper>

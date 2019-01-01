@@ -4,4 +4,6 @@ import com.hr.model.Position;
 
 public interface PositionService {
     int addPosition(Position position);
+    boolean delPosition(Integer id);
+    int updatePosition(Position position);
 }

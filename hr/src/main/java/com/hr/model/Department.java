@@ -65,7 +65,7 @@ public class Department implements Serializable {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", time='" + time + '\'' +
-                ", positions=" + positions +
+                //", positions=" + positions +
                 '}';
     }
 }

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hr.dao.RecruitDao">
+    <insert id="addRecruit">
+        insert into T_RECRUIT(RC_REQUEST, RC_THEME,RC_CONTENT, RC_NUMBER, RC_PID)
+        values (#{request},#{theme},#{content},#{number},#{position.id})
+    </insert>
+    <update id="updateRecruit">
+        update T_RECRUIT set RC_TIME=#{time} where RC_ID=#{id}
+    </update>
+    <delete id="delRecruit">
+        delete from T_RECRUIT where RC_ID=#{id}
+    </delete>
+    <resultMap id="rcMap" type="com.hr.model.Recruit">
+        <id property="id" column="RC_ID"/>
+        <result property="request" column="RC_REQUEST"/>
+        <result property="theme" column="RC_THEME"/>
+        <result property="time" column="RC_TIME"/>
+        <result property="number" column="RC_NUMBER"/>
+        <result property="content" column="RC_CONTENT"/>
+        <association property="position" resultMap="posMap"/>
+    </resultMap>
+    <resultMap id="posMap" type="com.hr.model.Position">
+        <id property="id" column="P_ID"/>
+        <result property="time" column="P_TIME"/>
+        <result property="name" column="P_NAME"/>
+        <association property="department" resultMap="com.hr.dao.PositionDao.depMap"/>
+    </resultMap>
+    <select id="getAllRecruits" resultMap="rcMap">
+        select RC_ID,RC_REQUEST,RC_THEME,RC_CONTENT,RC_NUMBER,RC_TIME,
+                P_ID,P_NAME,P_TIME,P_DID,
+                  D_ID,D_NAME,D_TIME
+        from (T_RECRUIT rc left join T_POSITION p on rc.RC_PID=p.P_ID) left join T_DEPARTMENT d on d.D_ID=p.P_DID
+    </select>
+    <select id="getRecruitByPid" resultMap="rcMap">
+        select RC_ID,RC_REQUEST,RC_THEME,RC_CONTENT,RC_NUMBER,RC_TIME,
+                P_ID,P_NAME,P_TIME,P_DID
+        from T_RECRUIT rc left join T_POSITION p on rc.RC_PID=p.P_ID
+        where RC_PID=#{id}
+    </select>
+</mapper>

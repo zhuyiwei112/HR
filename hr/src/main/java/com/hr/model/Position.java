@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Position implements Serializable {
-  private String id;
+  private Integer id;
   private String name;
   private String time;
   private Department department;
@@ -14,17 +14,21 @@ public class Position implements Serializable {
   public Position() {
   }
 
+  public Position(Integer id) {
+    this.id = id;
+  }
+
   public Position(String name, String time, Department department) {
     this.name = name;
     this.time = time;
     this.department = department;
   }
 
-  public String getId() {
+  public Integer getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(Integer id) {
     this.id = id;
   }
 
@@ -60,13 +64,13 @@ public class Position implements Serializable {
         this.employees = employees;
     }
 
-    @Override
+  @Override
   public String toString() {
-    return "PositionDao{" +
-            "id='" + id + '\'' +
+    return "Position{" +
+            "id=" + id +
             ", name='" + name + '\'' +
             ", time='" + time + '\'' +
-            ", did='" +
+            //", employees=" + employees +
             '}';
   }
 }

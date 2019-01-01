@@ -1,8 +1,9 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
-  Date: 2018/12/24
-  Time: 17:00
+  Date: 2018/12/28
+  Time: 13:22
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -16,9 +17,14 @@
     <title></title>
 </head>
 <body>
-<jsp:include page="WEB-INF/pages/admin/adminMain.jsp" flush="true"/>
-<jsp:include page="WEB-INF/pages/visitor/visitorMain.jsp" flush="true"/>
-<a href="gologin">login</a>
-<a href="godep">dep</a>
+<div>
+    <div>
+        <ul>
+            <li><a href="#">首页</a></li>
+            <li><a href="getRS">简历</a></li>
+            <li><a href="visgorcinfo">招聘信息</a></li>
+        </ul>
+    </div>
+</div>
 </body>
 </html>

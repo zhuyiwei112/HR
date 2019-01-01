@@ -87,16 +87,17 @@ public class AccountController {
                 break;
         }
         Account account = new Account(name,pass,type);
-        System.out.println(account);
+        //System.out.println(account);
         Account account1 = accountService.getAccount(account);
-        System.out.println(account1);
+        //System.out.println(account1);
         if (account1!=null){
+            //System.out.println("acc:"+account1);
             session.setAttribute("user",account1);
             switch (account1.getType()){
                 case "visitor":
-                    return "";
+                    return "visitor/visitorMain";
                 case "employee":
-                    return "";
+                    return "employee/employeeMain";
                 case "admin":
                     return "admin/adminMain";
             }

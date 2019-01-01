@@ -9,5 +9,7 @@ import java.util.Map;
 public interface PositionDao {
     Position getPositionByNameAndDid(Map<String,Object> map);
     boolean addPosition(Position position);
-    List<Position> getPosition();
+    //List<Position> getPosition();
+    boolean delPosition(Position position);
+    boolean updatePosition(Position position);
 }

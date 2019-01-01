@@ -1,7 +1,10 @@
 $(function () {
 
     //查询职位
-    var getPos=$(".getPos");
+    $("#bps2").click(function () {
+        location.href="getDep";
+    })
+    /*var getPos=$(".getPos");
     getPos.click(function () {
         //div2.css("display","block");
         getPos.css("display","none");
@@ -14,26 +17,26 @@ $(function () {
                 location.href="getPosition";
             }
         })
-    })
+    })*/
 
     //button的控制
     //查询职位按钮
-    $("#bps2").click(function () {
-        /*$(":button").attr("disabled",true);
+    /*$("#bps2").click(function () {
+        /!*$(":button").attr("disabled",true);
         var bps2=$(this);
         bps2.attr("value","　取消　");
-        bps2.attr("disabled",false);*/
+        bps2.attr("disabled",false);*!/
         var div1=$("#div1");
         div1.css("display","none");
         var getPos=$(".getPos");
         getPos.css("display","block");
-        /*getPos.attr("disabled",false);*/
+        /!*getPos.attr("disabled",false);*!/
         var close=$("<input type='button' value='　关闭　'>");
         div1.after(close);
         close.click(function () {
             location.reload(true);
         })
-    })
+    })*/
     //删除部门显示
     $("#bdp1").click(function () {
         $(":button").attr("disabled",true);

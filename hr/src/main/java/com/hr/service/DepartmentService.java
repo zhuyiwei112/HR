@@ -7,6 +7,6 @@ import java.util.List;
 public interface DepartmentService {
     List<Department> getDepartment();
     int addDepartment(Department department);
-    boolean delDepartment(Integer id);
+    boolean delDepartment(Department department);
     int updateDepartment(Department department);
 }

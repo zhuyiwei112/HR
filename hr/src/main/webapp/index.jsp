@@ -16,6 +16,8 @@
     <title></title>
 </head>
 <body>
+<jsp:include page="WEB-INF/pages/admin/adminMain.jsp" flush="true"/>
+<jsp:include page="WEB-INF/pages/visitor/visitorMain.jsp" flush="true"/>
 <a href="gologin">login</a>
 <a href="godep">dep</a>
 </body>

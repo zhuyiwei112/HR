@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
-  Date: 2018/12/24
-  Time: 17:00
+  Date: 2018/12/28
+  Time: 10:49
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -13,12 +13,19 @@
 <html>
 <head>
     <base href="<%=basePath%>"/>
-    <title></title>
+    <title>主界面</title>
 </head>
 <body>
-<jsp:include page="WEB-INF/pages/admin/adminMain.jsp" flush="true"/>
-<jsp:include page="WEB-INF/pages/visitor/visitorMain.jsp" flush="true"/>
-<a href="gologin">login</a>
-<a href="godep">dep</a>
+<div>
+    <div>
+        <ul>
+            <li><a href="#">首页</a></li>
+            <li><a href="#">招聘信息</a></li>
+            <li><a href="#">考勤情况</a></li>
+            <li><a href="#">薪资情况</a></li>
+            <li><a href="#">奖惩情况</a></li>
+        </ul>
+    </div>
+</div>
 </body>
 </html>

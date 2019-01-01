@@ -5,9 +5,29 @@
         insert into T_ACCOUNT(A_NAME,A_PASS,A_TYPE) values (#{name},#{pass},#{type})
     </insert>
 
-    <select id="getAccount" resultType="com.hr.model.Account">
-        select A_ID id,A_NAME name,A_PASS pass,A_TYPE type
-        from T_ACCOUNT
+    <resultMap id="accMap" type="com.hr.model.Account">
+        <id property="id" column="A_ID"/>
+        <result property="name" column="A_NAME"/>
+        <result property="pass" column="A_PASS"/>
+        <result property="type" column="A_TYPE"/>
+        <association property="resume" resultMap="rsMap"/>
+    </resultMap>
+    <resultMap id="rsMap" type="com.hr.model.Resume">
+        <id property="id" column="R_ID"/>
+        <result property="name" column="R_NAME"/>
+        <result property="sex" column="R_SEX"/>
+        <result property="birth" column="R_BIRTH"/>
+        <result property="phone" column="R_PHONE"/>
+        <result property="address" column="R_ADDRESS"/>
+        <result property="email" column="R_EMAIL"/>
+        <result property="experience" column="R_EXPERIENCE"/>
+        <result property="major" column="R_MAJOR"/>
+        <result property="education" column="R_EDUCATION"/>
+    </resultMap>
+    <select id="getAccount" resultMap="accMap">
+        select A_ID,A_NAME,A_PASS,A_TYPE,
+                R_AID,R_NAME,R_BIRTH,R_SEX,R_PHONE,R_ADDRESS,R_EMAIL,R_EXPERIENCE,R_MAJOR,R_EDUCATION,R_AID
+        from T_ACCOUNT a left join T_RESUME res on a.A_ID=res.R_AID
         where A_NAME=#{name} and A_PASS=#{pass} and A_TYPE=#{type}
     </select>
     <select id="getAccountByName" resultType="com.hr.model.Account">

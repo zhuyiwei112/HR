@@ -16,41 +16,38 @@
     <base href="<%=basePath%>"/>
     <title></title>
     <script src="resources/jquery-3.2.1.js"></script>
+    <script src="resources/js/dp.js"></script>
     <script>
         $(function () {
-            $("#dep").change(function () {
-                $("#pos").empty();
-                $.ajax({
-                    type:"post",
-                    url:"getPos",
-                    data:"depName="+$("#dep").val(),
-                    success:function (obj) {
-                        for(var pos in obj){
-                            var option=$("<option></option>");
-                            option.text(obj[pos].name);
-                            var select=$("#pos");
-                            select.append(option);
-                        }
-                    }
-                })
-            })
+
         })
     </script>
 </head>
 <body>
 <jsp:include page="adminMain.jsp" flush="true"/>
-<p>
-<select id="dep">
-    <c:forEach items="${sessionScope.departments}" var="depar">
-        <option>${depar.name}</option>
-    </c:forEach>
-</select>
-<select id="pos">
-    <c:forEach items="${sessionScope.departments[0].positions}" var="pos">
-    <option>${pos.name}</option>
-    </c:forEach>
-</select>
-<input type="button" value="查询">
-</p>
+<div>
+    <div id="div1">
+        <select id="dep">
+            <c:forEach items="${sessionScope.departments}" var="depar">
+                <option>${depar.name}</option>
+            </c:forEach>
+        </select>
+        <select id="pos">
+            <c:forEach items="${sessionScope.departments[0].positions}" var="pos">
+            <option>${pos.name}</option>
+            </c:forEach>
+        </select>
+        <input type="button" id="delPos" value="删除职位">
+        <input type="button" id="updatePos" value="修改职位">
+        <input type="button" id="return" value="返回">
+        <input type="button" id="getEmp" value="查询员工">
+    </div>
+    <div>
+        <table id="table1">
+        </table>
+        <div id="divpage">
+        </div>
+    </div>
+</div>
 </body>
 </html>

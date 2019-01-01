@@ -7,6 +7,7 @@ public class Account implements Serializable {
     private String name;
     private String pass;
     private String type;
+    private Resume resume;
 
     public Account() {
     }
@@ -47,6 +48,14 @@ public class Account implements Serializable {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public Resume getResume() {
+        return resume;
+    }
+
+    public void setResume(Resume resume) {
+        this.resume = resume;
     }
 
     @Override

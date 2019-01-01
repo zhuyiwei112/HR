@@ -20,20 +20,7 @@
     <script src="resources/js/dpinfo.js"></script>
     <script>
         $(function () {
-            $(".delPos").click(function () {
-                var pid=$(this).parent().next();
-                $.ajax({
-                    type:"post",
-                    url:"delPos",
-                    data:"id="+id.val(),
-                    success:function (obj) {
-                        alert(obj);
-                        if (obj=="删除成功"){
 
-                        }
-                    }
-                })
-            })
         })
     </script>
 </head>
@@ -41,9 +28,9 @@
 <jsp:include page="adminMain.jsp" flush="true"/>
 
 <div id="div1">
-    <input type="button" value="新增部门" id="addDep"><br/>
+    <input type="button" value="新增部门" id="addDep">
     <input id="bdp1" type="button" value="删除部门">
-    <input id="bdp2" type="button" value="修改部门"><br/>
+    <input id="bdp2" type="button" value="修改部门">
     <input id="bps1" type="button" value="新增职位">
     <input id="bps2" type="button" value="查询职位">
 </div>
@@ -53,17 +40,26 @@
         <tr>
             <td>部门名称</td><td>创建时间</td><td></td><td></td><td></td><td></td>
         </tr>
-    <c:forEach items="${sessionScope.departments}" var="depar">
-        <tr>
-            <input type="hidden" class="id" value="${depar.id}">
-            <td>${depar.name}</td>
-            <td>${depar.time}</td>
-            <td><input style="display: none" type="button" class="delDep" value="删除部门"></td>
-            <td><input style="display: none" type="button" class="addPos" value="新增职位"></td>
-            <td><input style="display: none" type="button" class="updateDep" value="修改部门"></td>
-            <td><input style="display: none" type="button" class="getPos" value="查询职位"></td>
-        </tr>
-    </c:forEach>
+        <c:if test="${empty sessionScope.departments}">
+            <tr>
+                <td colspan="6" style="color: red">
+                    本公司未有部门
+                </td>
+            </tr>
+        </c:if>
+        <c:if test="${not empty sessionScope.departments}">
+            <c:forEach items="${sessionScope.departments}" var="depar">
+                <tr>
+                    <input type="hidden" class="id" value="${depar.id}">
+                    <td>${depar.name}</td>
+                    <td>${depar.time}</td>
+                    <td><input style="display: none" type="button" class="delDep" value="删除部门"></td>
+                    <td><input style="display: none" type="button" class="addPos" value="新增职位"></td>
+                    <td><input style="display: none" type="button" class="updateDep" value="修改部门"></td>
+                    <%--<td><input style="display: none" type="button" class="getPos" value="查询职位"></td>--%>
+                </tr>
+            </c:forEach>
+        </c:if>
     </table>
     <c:forEach var="i" begin="1" end="${sessionScope.tp}">
         <a href="godep?cp=${i}">${i}</a>

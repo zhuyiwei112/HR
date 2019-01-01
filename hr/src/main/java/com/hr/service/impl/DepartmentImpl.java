@@ -1,7 +1,9 @@
 package com.hr.service.impl;
 
 import com.hr.dao.DepartmentDao;
+import com.hr.dao.PositionDao;
 import com.hr.model.Department;
+import com.hr.model.Position;
 import com.hr.service.DepartmentService;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +14,8 @@ import java.util.List;
 public class DepartmentImpl implements DepartmentService {
     @Resource
     private DepartmentDao departmentDao;
+    @Resource
+    private PositionDao positionDao;
 
     @Override
     public List<Department> getDepartment() {
@@ -35,11 +39,18 @@ public class DepartmentImpl implements DepartmentService {
     }
 
     @Override
-    public boolean delDepartment(Integer id) {
-        if (id==null){
+    public boolean delDepartment(Department department) {
+        if (department==null){
             return false;
         }
-        return departmentDao.delDepartment(id);
+        departmentDao.delDepartment(department.getId());
+        List<Position> positions = department.getPositions();
+        if (positions!=null||positions.size()!=0){
+            for (Position position : positions) {
+                positionDao.delPosition(position);
+            }
+        }
+        return true;
     }
 
     @Override

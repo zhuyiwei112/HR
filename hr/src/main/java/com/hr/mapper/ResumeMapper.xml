@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hr.dao.ResumeDao">
+    <insert id="addResume">
+        insert into T_RESUME(R_NAME, R_BIRTH, R_SEX, R_PHONE, R_ADDRESS, R_EMAIL, R_EDUCATION, R_MAJOR, R_EXPERIENCE, R_AID) values
+        (#{name},#{birth},#{sex},#{phone},#{address},#{email},#{education},#{major},#{experience},#{account.id})
+    </insert>
+    <update id="updateResume">
+        update T_RESUME
+        set R_EDUCATION=#{education},R_MAJOR=#{major},R_EXPERIENCE=#{experience},R_EMAIL=#{email},
+              R_ADDRESS=#{address},R_PHONE=#{phone},R_SEX=#{sex},R_BIRTH=#{birth},R_NAME=#{name}
+        where R_ID=#{id}
+    </update>
+    <delete id="delResume">
+        delete from T_RESUME where R_ID=#{id}
+    </delete>
+    <resultMap id="rsMap" type="com.hr.model.Resume">
+        <id property="id" column="R_ID"/>
+        <result property="name" column="R_NAME"/>
+        <result property="sex" column="R_SEX"/>
+        <result property="birth" column="R_BIRTH"/>
+        <result property="phone" column="R_PHONE"/>
+        <result property="address" column="R_ADDRESS"/>
+        <result property="email" column="R_EMAIL"/>
+        <result property="experience" column="R_EXPERIENCE"/>
+        <result property="major" column="R_MAJOR"/>
+        <result property="education" column="R_EDUCATION"/>
+        <association property="account" resultMap="accMap"/>
+    </resultMap>
+    <resultMap id="accMap" type="com.hr.model.Account">
+        <id property="id" column="A_ID"/>
+        <result property="name" column="A_NAME"/>
+        <result property="type" column="A_TYPE"/>
+        <result property="pass" column="A_PASS"/>
+    </resultMap>
+    <select id="getRS" resultMap="rsMap">
+        select R_ID,R_NAME, R_BIRTH, R_SEX, R_PHONE, R_ADDRESS, R_EMAIL, R_EDUCATION, R_MAJOR, R_EXPERIENCE, R_AID,
+                A_ID,A_NAME,A_TYPE,A_PASS
+        from T_RESUME rs left join T_ACCOUNT a on rs.R_AID=A_ID
+        where R_AID=#{account.id}
+    </select>
+</mapper>
