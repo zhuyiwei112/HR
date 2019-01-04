@@ -111,24 +111,29 @@ public class AdminController {
     //增加部门
     @RequestMapping("adddep")
     public void addDep(HttpServletRequest request, HttpServletResponse response) throws Exception{
-        String department = request.getParameter("department");
-        Date date = new Date();
-        String time = new SimpleDateFormat("yyyy-MM-dd").format(date);
-        Department department1 = new Department(department, time);
-        int i = departmentService.addDepartment(department1);
+        String dname = request.getParameter("department");
         PrintWriter pw = response.getWriter();
-        if (department==null||department.equals("")){
+        if (dname==null||dname.equals("")){
             pw.print("输入内容不能为空");
             return;
         }
-        if (i==0){
-            pw.print("部门已存在");
-        }
-        if (i==1){
-            pw.print("添加成功");
-        }
-        if (i==2){
-            pw.print("添加失败");
+        Date date = new Date();
+        String time = new SimpleDateFormat("yyyy-MM-dd").format(date);
+        Department department = new Department(dname, time);
+        int i = departmentService.addDepartment(department);
+        switch (i){
+            case 0:
+                pw.print("部门已存在");
+                System.out.println(0);
+                break;
+            case 1:
+                pw.print("添加成功");
+                System.out.println(1);
+                break;
+            case 2:
+                pw.print("添加失败");
+                System.out.println(2);
+                break;
         }
     }
 

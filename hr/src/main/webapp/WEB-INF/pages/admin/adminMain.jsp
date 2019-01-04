@@ -22,6 +22,8 @@
             <li><a href="godep">部门信息</a></li>
             <li><a href="getDep">员工查询</a></li>
             <li><a href="goRC">招聘信息</a></li>
+            <li><a href="getDRes?type=admin">查看简历</a></li>
+            <li><a href="getTrain?type=1">培训信息</a></li>
             <li><a href="#">员工考勤</a></li>
             <li><a href="#">员工薪资</a></li>
             <li><a href="#">员工奖惩</a></li>

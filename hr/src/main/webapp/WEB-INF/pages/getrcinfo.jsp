@@ -19,11 +19,29 @@
     <script src="resources/js/rcinfo.js"></script>
     <script>
         $(function () {
-
+            $(".sendRC").click(function () {
+                var rcid = $(this).prev().val();
+                $.ajax({
+                    type:"post",
+                    url:"addDRes",
+                    data:"idRC="+rcid,
+                    success:function (obj) {
+                        alert(obj);
+                        if(obj=="请先填写简历"){
+                            location.href='getRS';
+                        }else if(obj=="请先登入"){
+                            location.href='gologin';
+                        }else if (obj=="投递成功"){
+                            location.href='visgorcinfo';
+                        }
+                    }
+                })
+            })
         })
     </script>
 </head>
 <body>
+<jsp:include page="visitor/visitorMain.jsp" flush="true"/>
 <div>
     <div>
         <fieldset>
@@ -52,6 +70,12 @@
                     </span>
                         <table>
                             <tr>
+                                <td>部门/职位</td>
+                            </tr>
+                            <tr>
+                                <td>${recruit.position.department.name}/${recruit.position.name}</td>
+                            </tr>
+                            <tr>
                                 <td>招聘要求</td>
                             </tr>
                             <tr>
@@ -67,14 +91,13 @@
                     </div>
                 </c:if>
             </c:forEach>
-
         </fieldset>
     </div>
 
-    <div>
+   <%-- <div>
         <div id="rcinfo" style="display: none">
             <div>
-                <%--${sessionScope.recruits}--%>
+                &lt;%&ndash;${sessionScope.recruits}&ndash;%&gt;
                 <c:forEach items="${sessionScope.recruits}" var="recruit">
                     <table>
                         <tr>
@@ -96,7 +119,7 @@
                         </tr>
                     </table>
                     <div style="display: none">
-                            <%--<span><h6>详情</h6></span>--%>
+                            &lt;%&ndash;<span><h6>详情</h6></span>&ndash;%&gt;
                         <span>
                         <c:if test="${empty recruit.time}">
                             <input type="button" class="publishRC" value="发布">
@@ -107,7 +130,7 @@
                         <input type="hidden" class="id" value="${recruit.id}">
                         <input type="button" class="delRC" value="删除">
                         <input type="hidden" value="${recruit.position.id}">
-                        <%--<input type="button" class="updateRC" value="修改">--%>
+                        &lt;%&ndash;<input type="button" class="updateRC" value="修改">&ndash;%&gt;
                     </span>
                         <table>
                             <tr>
@@ -126,7 +149,7 @@
                     </div>
                 </c:forEach>
             </div>
-        </div>
+        </div>--%>
 </div>
 </body>
 </html>

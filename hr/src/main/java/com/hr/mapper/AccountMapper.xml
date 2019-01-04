@@ -4,6 +4,9 @@
     <insert id="addAccount">
         insert into T_ACCOUNT(A_NAME,A_PASS,A_TYPE) values (#{name},#{pass},#{type})
     </insert>
+    <update id="updateAccount">
+        update T_ACCOUNT set A_TYPE=#{type} where A_ID=#{id}
+    </update>
 
     <resultMap id="accMap" type="com.hr.model.Account">
         <id property="id" column="A_ID"/>
@@ -26,7 +29,7 @@
     </resultMap>
     <select id="getAccount" resultMap="accMap">
         select A_ID,A_NAME,A_PASS,A_TYPE,
-                R_AID,R_NAME,R_BIRTH,R_SEX,R_PHONE,R_ADDRESS,R_EMAIL,R_EXPERIENCE,R_MAJOR,R_EDUCATION,R_AID
+                R_ID,R_NAME,R_BIRTH,R_SEX,R_PHONE,R_ADDRESS,R_EMAIL,R_EXPERIENCE,R_MAJOR,R_EDUCATION,R_AID
         from T_ACCOUNT a left join T_RESUME res on a.A_ID=res.R_AID
         where A_NAME=#{name} and A_PASS=#{pass} and A_TYPE=#{type}
     </select>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hr.dao.EmpTrainDao">
+    <insert id="addET">
+        insert into T_EMPTRAIN(ET_EID, ET_TID) values (#{eid},#{tid})
+    </insert>
+    <select id="getETByEid" resultType="com.hr.model.EmpTrain">
+        select ET_ID id,ET_EID eid,ET_TID tid
+        from T_EMPTRAIN
+        where ET_EID=#{id}
+    </select>
+</mapper>

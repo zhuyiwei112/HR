@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hr.dao.AttendanceDao">
+    <insert id="addAD">
+        insert into T_ATTENDANCE(AD_BEGINTIME, AD_ASID, AD_EID) values (#{beginTime},#{attendState.id},#{eid})
+    </insert>
+    <update id="updateAD">
+        update T_ATTENDANCE
+        set AD_ENDTIME=#{endTime},AD_ASID=#{attendState.id}
+        where AD_ID=#{id}
+    </update>
+    <resultMap id="adMap" type="com.hr.model.Attendance">
+        <id property="id" column="AD_ID"/>
+        <result property="beginTime" column="AD_BEGINTIME"/>
+        <result property="endTime" column="AD_ENDTIME"/>
+        <result property="eid" column="AD_EID"/>
+        <association property="attendState" javaType="com.hr.model.AttendState">
+            <id property="id" column="AS_ID"/>
+            <result property="state" column="AS_STATE"/>
+            <result property="amount" column="AS_AMOUNT"/>
+        </association>
+    </resultMap>
+    <select id="getAD" resultMap="adMap">
+        select AD_ENDTIME,AD_BEGINTIME,AD_EID,AD_ID,AS_ID,AS_STATE,AS_AMOUNT
+        from T_ATTENDANCE left join T_ADSTATE on AD_ASID=AS_ID
+        where  AD_BEGINTIME like #{date,jdbcType=VARCHAR}||'%' and AD_EID=#{eid}
+    </select>
+    <select id="getMonTime" resultType="java.lang.Integer">
+        select count(AD_ID) from T_ATTENDANCE where AD_EID=#{eid} and AD_ENDTIME LIKE #{month,jdbcType=VARCHAR}||'%'
+    </select>
+
+</mapper>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hr.dao.DeliverResDao">
+    <insert id="addDRes">
+        insert into T_DELIVERRES(DR_RID,DR_ISREAD,DR_RCID,DR_TIME) values (#{resume.id},#{isRead},#{recruit.id},#{time})
+    </insert>
+    <update id="updateDRes">
+        update T_DELIVERRES
+        <set>
+            <if test="isRead!=null">
+                DR_ISREAD=#{isRead},
+            </if>
+            <if test="time!=null and time!=''">
+                DR_TIME=#{time}
+            </if>
+        </set>
+        where DR_ID=#{id}
+    </update>
+    <resultMap id="drMap" type="com.hr.model.DeliverRes">
+        <id property="id" column="DR_ID"/>
+        <result property="isRead" column="DR_ISREAD"/>
+        <result property="time" column="DR_TIME"/>
+        <association property="resume" resultMap="com.hr.dao.ResumeDao.rsMap"/>
+        <association property="recruit" resultMap="com.hr.dao.RecruitDao.rcMap"/>
+    </resultMap>
+    <select id="getDResByRid" resultMap="drMap">
+        select DR_ID,DR_RID,DR_ISREAD,DR_RCID,DR_TIME,
+                R_ID,R_NAME,R_BIRTH,R_SEX,R_PHONE,R_ADDRESS,R_EMAIL,R_EXPERIENCE,R_MAJOR,R_EDUCATION,R_AID,
+                 P_NAME,D_NAME,P_ID,P_DID,D_ID,RC_ID
+        from T_DELIVERRES dr ,T_RESUME rs,T_RECRUIT rc,T_POSITION p,T_DEPARTMENT d
+        where R_ID=#{rid} and dr.DR_RCID=rc.RC_ID and p.P_ID=rc.RC_PID and d.D_ID=p.P_DID and dr.DR_RID=rs.R_ID
+    </select>
+    <select id="getAllDRes" resultMap="drMap">
+        select DR_ID,DR_RID,DR_ISREAD,DR_RCID,DR_TIME,
+                R_ID,R_NAME,R_BIRTH,R_SEX,R_PHONE,R_ADDRESS,R_EMAIL,R_EXPERIENCE,R_MAJOR,R_EDUCATION,R_AID
+        from T_DELIVERRES dr left  join T_RESUME rs on dr.DR_RID=rs.R_ID
+    </select>
+
+
+</mapper>

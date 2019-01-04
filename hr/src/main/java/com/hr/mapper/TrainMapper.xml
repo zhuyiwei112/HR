@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hr.dao.TrainDao">
+    <insert id="addTrain">
+        insert into T_TRAIN(T_CONTENT, T_REQUEST, T_BEGINTIME, T_ENDTIME, T_ISPUBLISH)
+        values (#{content},#{request},#{beginTime},#{endTime},#{isPublish})
+    </insert>
+    <update id="updateTrain">
+        update T_TRAIN set T_ISPUBLISH=#{isPublish} where T_ID=#{id}
+    </update>
+    <delete id="delTrain">
+        delete from T_TRAIN where T_ID=#{id}
+    </delete>
+    <select id="getTrain" resultType="com.hr.model.Train">
+        select T_ID id,T_ISPUBLISH isPublish,T_BEGINTIME beginTime,T_CONTENT content,T_ENDTIME endTime,T_REQUEST request
+        from T_TRAIN
+        <where>
+            <if test="isPublish!=null">
+                T_ISPUBLISH=#{isPublish}
+            </if>
+        </where>
+    </select>
+
+</mapper>

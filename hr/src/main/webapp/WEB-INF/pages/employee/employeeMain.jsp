@@ -20,7 +20,9 @@
     <div>
         <ul>
             <li><a href="#">首页</a></li>
-            <li><a href="#">招聘信息</a></li>
+            <li><a href="visgorcinfo">招聘信息</a></li>
+            <li><a href="goAttend">我要上班</a></li>
+            <li><a href="getTrainInfo">查看培训</a></li>
             <li><a href="#">考勤情况</a></li>
             <li><a href="#">薪资情况</a></li>
             <li><a href="#">奖惩情况</a></li>

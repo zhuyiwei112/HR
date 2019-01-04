@@ -6,6 +6,59 @@
     <script src="resources/jquery-3.2.1.js"></script>
     <script>
         $(function () {
+            var div = $("#clock");
+            var inp=$("#c");
+            setInterval(function () {
+                var date = new Date();
+                var hh = date.getHours();
+                var mm = date.getMinutes();
+                var ss = date.getSeconds();
+                if (hh < 10) {
+                    hh = "0" + hh;
+                }
+                if (mm < 10) {
+                    mm = "0" + mm;
+                }
+                if (ss < 10) {
+                    ss = "0" + ss;
+                }
+                var clock = hh + ":" + mm + ":" + ss;
+                inp.val(clock);
+            })
+        },1000)
+        $(function () {
+            /*setInterval(function () {
+                var date=new Date();
+                var hh=date.getHours();
+                var mm=date.getMinutes();
+                var ss=date.getSeconds();
+                if (hh<0){
+                    hh="0"+hh;
+                }
+                if (mm<10){
+                    mm="0"+mm;
+                }
+                if (ss<10){
+                    ss="0"+ss;
+                }
+
+            })*/
+            /*var div=$("#clock");
+            var int=self.setInterval("clock()",50);
+            function clock(){
+                var t=new Date();
+                div.append(t);
+            }
+            $("#c").click(function () {
+                int=clearInterval(int);
+            })*/
+
+
+
+
+
+
+
             $("#addDep").click(function () {
                 var inp = $("#addDep");
                 var form = $("<form action='addDep' method='post'></form>");
@@ -24,6 +77,8 @@
     </script>
 </head>
 <body>
+<input id="c" type="button">
+<div id="clock"></div>
 <div>
 <input type="button" value="新增部门" id="addDep">
 <form action="" method="post">

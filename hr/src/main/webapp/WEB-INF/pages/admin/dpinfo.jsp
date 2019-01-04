@@ -49,15 +49,16 @@
         </c:if>
         <c:if test="${not empty sessionScope.departments}">
             <c:forEach items="${sessionScope.departments}" var="depar">
-                <tr>
-                    <input type="hidden" class="id" value="${depar.id}">
-                    <td>${depar.name}</td>
-                    <td>${depar.time}</td>
-                    <td><input style="display: none" type="button" class="delDep" value="删除部门"></td>
-                    <td><input style="display: none" type="button" class="addPos" value="新增职位"></td>
-                    <td><input style="display: none" type="button" class="updateDep" value="修改部门"></td>
-                    <%--<td><input style="display: none" type="button" class="getPos" value="查询职位"></td>--%>
-                </tr>
+                <c:if test="${not empty depar.name}">
+                    <tr>
+                        <input type="hidden" class="id" value="${depar.id}">
+                        <td>${depar.name}</td>
+                        <td>${depar.time}</td>
+                        <td><input style="display: none" type="button" class="delDep" value="删除部门"></td>
+                        <td><input style="display: none" type="button" class="addPos" value="新增职位"></td>
+                        <td><input style="display: none" type="button" class="updateDep" value="修改部门"></td>
+                    </tr>
+                </c:if>
             </c:forEach>
         </c:if>
     </table>

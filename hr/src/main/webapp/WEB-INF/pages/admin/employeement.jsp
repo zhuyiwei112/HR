@@ -14,7 +14,7 @@
 <html>
 <head>
     <base href="<%=basePath%>"/>
-    <title></title>
+    <title>招聘信息</title>
     <script src="resources/jquery-3.2.1.js"></script>
     <script src="resources/js/employeement.js"></script>
     <script>
@@ -24,6 +24,7 @@
     </script>
 </head>
 <body>
+
 <jsp:include page="adminMain.jsp" flush="true"/>
 <div>
     <div id="div1">

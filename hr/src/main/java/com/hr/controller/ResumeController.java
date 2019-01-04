@@ -144,7 +144,7 @@ public class ResumeController {
         Account user = (Account) session.getAttribute("user");
         resume.setAccount(user);
         if (resumeService.addRS(resume)){
-            System.out.println("add：true");
+            //System.out.println("add：true");
             pw.print("保存成功");
         }else {
             pw.print("保存失败");

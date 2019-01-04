@@ -95,14 +95,14 @@ public class AccountController {
             session.setAttribute("user",account1);
             switch (account1.getType()){
                 case "visitor":
-                    return "visitor/visitorMain";
+                    return "getrcinfo";
                 case "employee":
-                    return "employee/employeeMain";
+                    return "employee/signin";
                 case "admin":
                     return "admin/adminMain";
             }
 
         }
-        return "../../index";
+        return "login";
     }
 }

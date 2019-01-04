@@ -20,9 +20,9 @@
 <div>
     <div>
         <ul>
-            <li><a href="#">首页</a></li>
-            <li><a href="getRS">简历</a></li>
+            <li><a href="getRS">我的简历</a></li>
             <li><a href="visgorcinfo">招聘信息</a></li>
+            <li><a href="getDRes?type=visitor">录用通知</a></li>
         </ul>
     </div>
 </div>

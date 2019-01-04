@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hr.dao.DepTrainDao">
+    <insert id="addDT">
+        insert  into T_DEPTRAIN(DT_DID, DT_TID) values (#{did},#{tid})
+    </insert>
+    <select id="getDTByDid" resultType="com.hr.model.DepTrain">
+        select DT_ID id,DT_DID did, DT_TID tid
+        from T_DEPTRAIN
+        where DT_DID=#{did}
+    </select>
+</mapper>

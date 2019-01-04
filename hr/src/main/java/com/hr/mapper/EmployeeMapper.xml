@@ -2,4 +2,31 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.hr.dao.EmployeeDao">
 
+    <insert id="addEmp">
+        insert into T_EMPLOYEE(E_TIME, E_SALARY, E_STATEID, E_PID, E_AID, E_BONUS) values (#{time},3000.0,2,#{position.id},#{account.id},500.0)
+    </insert>
+    <resultMap id="empMap1" type="com.hr.model.Employee">
+        <id property="id" column="E_ID"/>
+        <result property="time" column="E_TIME"/>
+        <result property="bonus" column="E_BONUS"/>
+        <result property="salary" column="E_SALARY"/>
+        <association property="position" resultMap="pos1"/>
+    </resultMap>
+    <resultMap id="pos1" type="com.hr.model.Position">
+        <id property="id" column="P_ID"/>
+        <association property="department" javaType="com.hr.model.Department">
+            <id property="id" column="D_ID"/>
+        </association>
+    </resultMap>
+    <select id="getEmp" resultMap="com.hr.dao.DepartmentDao.empMap">
+        select E_ID,E_TIME,E_SALARY,E_PID,E_AID,E_BONUS,
+                R_AID,R_NAME
+        from T_EMPLOYEE e,T_RESUME rs
+        where e.E_AID=rs.R_AID
+    </select>
+    <select id="getEmpByAid" resultMap="empMap1">
+        select E_ID,E_TIME,E_SALARY,E_BONUS,P_ID,D_ID
+        from T_EMPLOYEE e,T_POSITION p,T_DEPARTMENT d
+        where e.E_PID=p.P_ID and p.P_DID=d.D_ID and E_AID=#{id}
+    </select>
 </mapper>

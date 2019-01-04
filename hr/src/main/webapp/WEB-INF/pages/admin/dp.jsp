@@ -14,7 +14,7 @@
 <html>
 <head>
     <base href="<%=basePath%>"/>
-    <title></title>
+    <title>职位/员工</title>
     <script src="resources/jquery-3.2.1.js"></script>
     <script src="resources/js/dp.js"></script>
     <script>

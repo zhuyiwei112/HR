@@ -199,7 +199,9 @@ public class RecruitController {
     }
 
     @RequestMapping("visgorcinfo")
-    public String visGoRCInfo(){
+    public String visGoRCInfo(HttpSession session) throws Exception{
+        List<Recruit> recruits = recruitService.getAllRecruits();
+        session.setAttribute("RCs",recruits);
         return "getrcinfo";
     }
 }

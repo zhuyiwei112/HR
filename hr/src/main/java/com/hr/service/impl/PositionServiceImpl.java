@@ -2,6 +2,7 @@ package com.hr.service.impl;
 
 import com.hr.dao.PositionDao;
 import com.hr.model.Department;
+import com.hr.model.Employee;
 import com.hr.model.Position;
 import com.hr.service.PositionService;
 import org.springframework.stereotype.Service;
@@ -62,4 +63,5 @@ public class PositionServiceImpl implements PositionService {
         }
         return 0;//存在
     }
+
 }
